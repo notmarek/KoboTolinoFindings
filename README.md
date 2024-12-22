@@ -1,4 +1,25 @@
 # KoboTolinoFindings
+### This is specifically for the Kobo Libra Colour, Clara BW/Colour and their tolino counterparts
+
+
+# Upgrading to 5.x
+- Before upgrading i recommend making a backup of your recovery partition `/dev/disk/by-partlabel/recovery` as it contains a base kobo fw image and can help you to get back to the stable 4.x branch
+- Links to most firmware versions can be found at (mytolino.de/software-updates-tolino-ereader)[https://mytolino.de/software-updates-tolino-ereader/] (English site is missing new updates)
+- Conversion fw for Libra Colour is at `https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt5-qt6-update-5.1.184318/KoboRoot.tgz`
+- Conversion fw for Clara BW/Coulour is at `https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz`
+- You will not be able to use the built in update mechanism unless you switch to tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
+
+# Downgrading from 5.x back to stock 4.x
+- For the libra colour i created a downgrade package from fw.tgz located inside the stock recovery.fs
+- I will add the Clara downgrade package as well if i get my hands on a fw.tgz
+  ### How do i do it?
+  1. enable devmode on your tolino and switch to kobo (this may not be required but i haven't tried it in tolino mode)
+  2. factory reset and choose the non wifi option, this will make your ereader show up as a mass storage device
+  3. sideload update.tar into your `.kobo` folder
+  4. eject your ereader
+  5. profit!
+  6. after you are in the 4.x firmware you should update to latest trough sync or manually
+
 
 # Updates
 
@@ -73,10 +94,22 @@
     `^SN-[TN][0-9]{4}[1-9A-C][0-9]{7},[0-9a-f]{32}$`
   - after verifying that the serial number is acceptable its dded into `/dev/disk/by-partlabel/hwcfg`
 
+# Recovery Options
+  ### Recovery Partition
+  - Assuming your bootloader and kernel aren't broken you can recover from broken rootfs updates by holding the right button + power until the light shuts off
+  - Recovery will flash all the images stored in /recovery rolling you back to your recovery version
+  
+  ### Fastboot
+  - Can be access by holding power and spamming right button with a cable connected to the computer
+  - Very stripped down, not sure how useful, `flash` cmd might work
+  
+  ### BootRom
+  - ?
+
 # Other links
 
-[pgaskin kobopatch issue #130](https://github.com/pgaskin/kobopatch-patches/issues/130)
-[NerdyProjects koreader pr #12401](https://github.com/koreader/koreader/pull/12401)
-[beedaddy koreader issue #12047](https://github.com/koreader/koreader/issues/12047)
-[fohvok kfmon issue #9](https://github.com/NiLuJe/kfmon/issues/9)
-[NerdyProjects kfmon pr #11](https://github.com/NiLuJe/kfmon/pull/11)
+- [pgaskin kobopatch issue #130](https://github.com/pgaskin/kobopatch-patches/issues/130)
+- [NerdyProjects koreader pr #12401](https://github.com/koreader/koreader/pull/12401)
+- [beedaddy koreader issue #12047](https://github.com/koreader/koreader/issues/12047)
+- [fohvok kfmon issue #9](https://github.com/NiLuJe/kfmon/issues/9)
+- [NerdyProjects kfmon pr #11](https://github.com/NiLuJe/kfmon/pull/11)
