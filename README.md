@@ -98,13 +98,46 @@
   ### Recovery Partition
   - Assuming your bootloader and kernel aren't broken you can recover from broken rootfs updates by holding the right button + power until the light shuts off
   - Recovery will flash all the images stored in /recovery rolling you back to your recovery version
-  
+
   ### Fastboot
   - Can be access by holding power and spamming right button with a cable connected to the computer
   - Very stripped down, not sure how useful, `flash` cmd might work
-  
-  ### BootRom
-  - ?
+
+# BootRom
+  - SBC, SLA, DAA are disabled (Secure boot seems to be disabled for the preloader)
+  - Can be accessed by shorting the download pads on the board
+  ```
+  Preloader -     CPU:            MT8512()
+  Preloader -     HW version:        0x0
+  Preloader -     WDT:            0x10007000
+  Preloader -     Uart:            0x11002000
+  Preloader -     Brom payload addr:    0x100a00
+  Preloader -     DA payload addr:    0x111000
+  Preloader -     CQ_DMA addr:        0x10214000
+  Preloader -     Var1:            0xa
+  Preloader - Disabling Watchdog...
+  Preloader - HW code:            0x8512
+  Preloader - Target config:        0xe0
+  Preloader -     SBC enabled:        False
+  Preloader -     SLA enabled:        False
+  Preloader -     DAA enabled:        False
+  Preloader -     SWJTAG enabled:        False
+  Preloader -     EPP_PARAM at 0x600 after EMMC_BOOT/SDMMC_BOOT:    False
+  Preloader -     Root cert required:    False
+  Preloader -     Mem read auth:        True
+  Preloader -     Mem write auth:        True
+  Preloader -     Cmd 0xC8 blocked:    True
+  Preloader - Get Target info
+  Preloader - BROM mode detected.
+  Preloader -     HW subcode:        0x8a00
+  Preloader -     HW Ver:            0xca02
+  Preloader -     SW Ver:            0x100
+  Preloader - ME_ID:            FA1F001954B53BEC0EC423FE9D59C26C
+  Preloader - SOC_ID:            0000000000000000000000000000000000000000000000000000000000000000
+  ```
+  - mtkclient has support for the SOC but i haven't been able to use it to extract the preloader
+  - preloader can be optained from the update files (bl2.img)
+  - you can also dump the preloader on device by using `dd if=/dev/mmcblk0boot0 of=/mnt/onboard/preloader.img`
 
 # Other links
 
