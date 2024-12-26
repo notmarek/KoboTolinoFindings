@@ -10,8 +10,7 @@
 - You will not be able to use the built in update mechanism unless you switch to tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
 
 # Downgrading from 5.x back to stock 4.x
-- For the libra colour i created a downgrade package from fw.tgz located inside the stock recovery.fs
-- I will add the Clara downgrade package as well if i get my hands on a fw.tgz
+- the update.tar in DowngradePackages is universal for the Clara (Shine 5) bw/c and Libra (Vision) Colour
   ### How do i do it?
   1. enable devmode on your tolino and switch to kobo (this may not be required but i haven't tried it in tolino mode)
   2. factory reset and choose the non wifi option, this will make your ereader show up as a mass storage device
