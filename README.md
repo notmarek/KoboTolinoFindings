@@ -1,15 +1,17 @@
 # KoboTolinoFindings
+
 ### This is specifically for the Kobo Libra Colour, Clara BW/Colour and their tolino counterparts
 
-
 # Upgrading to 5.x
+
 - Before upgrading i recommend making a backup of your recovery partition `/dev/disk/by-partlabel/recovery` as it contains a base kobo fw image and can help you to get back to the stable 4.x branch
-- Links to most firmware versions can be found at (mytolino.de/software-updates-tolino-ereader)[https://mytolino.de/software-updates-tolino-ereader/] (English site is missing new updates)
+- Links to most firmware versions can be found at [mytolino.de/software-updates-tolino-ereader](https://mytolino.de/software-updates-tolino-ereader/) (English site is missing new updates)
 - Conversion fw for Libra Colour is at `https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt5-qt6-update-5.1.184318/KoboRoot.tgz`
 - Conversion fw for Clara BW/Coulour is at `https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz`
 - You will not be able to use the built in update mechanism unless you switch to tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
 
 # Downgrading from 5.x back to stock 4.x
+
 - the update.tar in DowngradePackages is universal for the Clara (Shine 5) bw/c and Libra (Vision) Colour
   ### How do i do it?
   1. enable devmode on your tolino and switch to kobo (this may not be required but i haven't tried it in tolino mode)
@@ -18,7 +20,6 @@
   4. eject your ereader
   5. profit!
   6. after you are in the 4.x firmware you should update to latest trough sync or manually
-
 
 # Updates
 
@@ -94,17 +95,24 @@
   - after verifying that the serial number is acceptable its dded into `/dev/disk/by-partlabel/hwcfg`
 
 # Recovery Options
+- Fix your fuckups
   ### Recovery Partition
+
   - Assuming your bootloader and kernel aren't broken you can recover from broken rootfs updates by holding the right button + power until the light shuts off
   - Recovery will flash all the images stored in /recovery rolling you back to your recovery version
 
   ### Fastboot
+
   - Can be access by holding power and spamming right button with a cable connected to the computer
   - Very stripped down, not sure how useful, `flash` cmd might work
 
-# BootRom
+# Boot
+- Some docs about the boot process
+  ### BootRom (BL1)
+
   - SBC, SLA, DAA are disabled (Secure boot seems to be disabled for the preloader)
   - Can be accessed by shorting the download pads on the board
+
   ```
   Preloader -     CPU:            MT8512()
   Preloader -     HW version:        0x0
@@ -134,9 +142,16 @@
   Preloader - ME_ID:            FA1F001954B53BEC0EC423FE9D59C26C
   Preloader - SOC_ID:            0000000000000000000000000000000000000000000000000000000000000000
   ```
+
   - mtkclient has support for the SOC but i haven't been able to use it to extract the preloader
   - preloader can be optained from the update files (bl2.img)
   - you can also dump the preloader on device by using `dd if=/dev/mmcblk0boot0 of=/mnt/onboard/preloader.img`
+
+  ### Preloader (BL2)
+  - Packaged with every update inside the bl2.img
+  - Does secure boot checks
+  - Includes stripped down fastboot
+  - My BinaryNinja db with some names and structs is present in `Preloader.bndb`
 
 # Other links
 
