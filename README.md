@@ -10,6 +10,10 @@
 - Conversion fw for Clara BW/Coulour is at `https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz`
 - You will not be able to use the built in update mechanism unless you switch to tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
 
+# Enabling devmodeon on latest firmware
+- Drop the [Kobo.tgz](https://github.com/notmarek/KoboTolinoFindings/raw/refs/heads/master/Kobo.tgz) file into `/mnt/onboard/.kobo`
+- After the update applies search `devmodeon` - devmode should be enabled :)
+
 # Downgrading from 5.x back to stock 4.x
 
 - the update.tar in DowngradePackages is universal for the Clara (Shine 5) bw/c and Libra (Vision) Colour
@@ -146,6 +150,7 @@
   - mtkclient has support for the SOC but i haven't been able to use it to extract the preloader
   - preloader can be optained from the update files (bl2.img)
   - you can also dump the preloader on device by using `dd if=/dev/mmcblk0boot0 of=/mnt/onboard/preloader.img`
+  - Bootrom is available at `brom_8512.bin`
 
   ### Preloader (BL2)
   - Packaged with every update inside the bl2.img
