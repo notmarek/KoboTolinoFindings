@@ -24,6 +24,12 @@
   4. eject your ereader
   5. profit!
   6. after you are in the 4.x firmware you should update to latest trough sync or manually
+ 
+  ### Downgrade to 4.x from Tolino Vision Color 5.x in Kobo Mode, keeping all data and books
+  1. Downgrade to with [5.1.184318 update.tar](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt6-recovery-5.1.184318/update.tar).
+  2. sideload update.tar into your `.kobo` folder
+  3. eject ereader, wait for update to complete
+  4. after you are in the 4.x firmware you should update to latest trough sync or manually
 
 # Updates
 
