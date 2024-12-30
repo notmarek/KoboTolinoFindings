@@ -10,7 +10,7 @@
 - Conversion fw for Clara BW/Coulour is at `https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz`
 - You will not be able to use the built in update mechanism unless you switch to tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
 
-# Enabling devmodeon on latest firmware
+# Enabling devmode on 5.x firmware
 - Drop the [Kobo.tgz](https://github.com/notmarek/KoboTolinoFindings/raw/refs/heads/master/Kobo.tgz) file into `/mnt/onboard/.kobo`
 - After the update applies search `devmodeon` - devmode should be enabled :)
 
@@ -19,7 +19,7 @@
 - the update.tar in DowngradePackages is universal for the Clara (Shine 5) bw/c and Libra (Vision) Colour
   ### How do i do it?
   0. If you in Kobo mode already skip to step 2
-  1. (enable devmode on your tolino)[# Enabling devmodeon on latest firmware] and switch to kobo `(this may not be required but i haven't tried it in tolino mode)`
+  1. [enable devmode on your tolino](#enabling-devmod-on-5.x-firmware) and switch to kobo `(this may not be required but i haven't tried it in tolino mode)`
   2. sideload update.tar into your `.kobo` folder
   3. eject your ereader
   4. profit!
