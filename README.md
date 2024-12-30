@@ -11,13 +11,16 @@
 - You will not be able to use the built in update mechanism unless you switch to tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
 
 # Enabling devmode on 5.x firmware
+
 - Drop the [Kobo.tgz](https://github.com/notmarek/KoboTolinoFindings/raw/refs/heads/master/Kobo.tgz) file into `/mnt/onboard/.kobo`
 - After the update applies search `devmodeon` - devmode should be enabled :)
 
 # Downgrading from 5.x back to stock 4.x
 
 - the update.tar in DowngradePackages is universal for the Clara (Shine 5) bw/c and Libra (Vision) Colour
+
   ### How do i do it?
+
   0. If you in Kobo mode already skip to step 2
   1. [enable devmode on your tolino](#enabling-devmode-on-5x-firmware) and switch to kobo `(this may not be required but i haven't tried it in tolino mode)`
   2. sideload update.tar into your `.kobo` folder
@@ -98,7 +101,9 @@
   - after verifying that the serial number is acceptable its dded into `/dev/disk/by-partlabel/hwcfg`
 
 # Recovery Options
+
 - Fix your fuckups
+
   ### Recovery Partition
 
   - Assuming your bootloader and kernel aren't broken you can recover from broken rootfs updates by holding the right button + power until the light shuts off
@@ -110,7 +115,9 @@
   - Very stripped down, not sure how useful, `flash` cmd might work
 
 # Boot
+
 - Some docs about the boot process
+
   ### BootRom (BL1)
 
   - SBC, SLA, DAA are disabled (Secure boot seems to be disabled for the preloader)
@@ -152,10 +159,34 @@
   - Bootrom is available at `brom_8512.bin`
 
   ### Preloader (BL2)
+
   - Packaged with every update inside the bl2.img
   - Does secure boot checks
   - Includes stripped down fastboot
   - My BinaryNinja db with some names and structs is present in `Preloader.bndb`
+
+# Known FW versions
+
+### Shine 5
+
+   | Version    | Release Date   | Type                                                                                                                                                                                                                             |
+|------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 5.0.175773 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt6-recovery-5.0.175773/update.tar) |
+| 5.0.178115 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt5-qt6-update-5.0.178115/KoboRoot.tgz), [Normal](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-update-5.0.178115/update.tar), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-recovery-5.0.178115/update.tar)               |
+| 5.1.184318 | July 2024      | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Jul2024/tolino-qt6-update-5.1.184318/update.tar)                                                                                                                         |
+| 5.2.190625 | August 2024    | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Aug2024/tolino-qt6-update-5.2.190625/update.tar)                                                                                                                         |
+| 5.3.195056 | September 2024 | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Sep2024/tolino-qt6-update-5.3.195056/update.tar)                                                                                                                         |
+| 5.4.197982 | October 2024   | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Oct2024/tolino-qt6-update-5.4.197982/update.tar)                                                                                                                         |
+
+### Vision Colour
+
+| Version    | Release Date   | Type                                                                                                                                                                                                                             |
+|------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 5.1.184318 | July 2024      | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt5-qt6-update-5.1.184318/KoboRoot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt6-recovery-5.1.184318/update.tar) |
+| 5.1.186250 | July 2024      | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt6-update-5.1.186250/update.tar)                                                                                                                         |
+| 5.2.190625 | August 2024    | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Aug2024/tolino-qt6-update-5.2.190625/update.tar)                                                                                                                         |
+| 5.3.195056 | September 2024 | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Sep2024/tolino-qt6-update-5.3.195056/update.tar)                                                                                                                         |
+| 5.4.197982 | October 2024   | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Oct2024/tolino-qt6-update-5.4.197982/update.tar)                                                                                                                         |
 
 # Other links
 
