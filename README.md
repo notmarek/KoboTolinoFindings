@@ -19,7 +19,7 @@
 - the update.tar in DowngradePackages is universal for the Clara (Shine 5) bw/c and Libra (Vision) Colour
   ### How do i do it?
   0. If you in Kobo mode already skip to step 2
-  1. [enable devmode on your tolino](#enabling-devmod-on-5.x-firmware) and switch to kobo `(this may not be required but i haven't tried it in tolino mode)`
+  1. [enable devmode on your tolino](#enabling-devmode-on-5x-firmware) and switch to kobo `(this may not be required but i haven't tried it in tolino mode)`
   2. sideload update.tar into your `.kobo` folder
   3. eject your ereader
   4. profit!
