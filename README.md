@@ -1,6 +1,9 @@
 # KoboTolinoFindings
 
-### This is specifically for the Kobo Libra Colour, Clara BW/Colour and their tolino counterparts
+### This is targeted specifically toward the Kobo Libra Colour, Clara BW/Colour and their Tolino counterparts
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 # Upgrading to 5.x
 
@@ -8,7 +11,7 @@
 - Links to most firmware versions can be found at [mytolino.de/software-updates-tolino-ereader](https://mytolino.de/software-updates-tolino-ereader/) (English site is missing new updates)
 - Conversion fw for Libra Colour is at `https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt5-qt6-update-5.1.184318/KoboRoot.tgz`
 - Conversion fw for Clara BW/Coulour is at `https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz`
-- You will not be able to use the built in update mechanism unless you switch to tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
+- You will not be able to use the built in update mechanism unless you switch to Tolino inside dev settings, you will instead have to sideload all updates manually by placing them inside `/mnt/onboard/.kobo` folders
 
 # Enabling devmode on 5.x firmware
 
@@ -157,6 +160,7 @@
   - preloader can be optained from the update files (bl2.img)
   - you can also dump the preloader on device by using `dd if=/dev/mmcblk0boot0 of=/mnt/onboard/preloader.img`
   - Bootrom is available at `brom_8512.bin`
+  - even tho mtkclient and other tools say that SBC is disabled a modified preloader image doesn't boot and device is forced into brom DL mode
 
   ### Preloader (BL2)
 
@@ -167,9 +171,16 @@
 
 # Known FW versions
 
+| Name       | Function                                                                                                           |
+|------------|--------------------------------------------------------------------------------------------------------------------|
+| Conversion | An update allowing conversion from the 4.x to the 5.x branch of the fw, uses old update format (KoboRoot.tgz)      | 
+| Recovery   | Replaces the whole recoveryfs, also contains a rootfs image inside /recovery folder that is applied during stage2. |
+| Normal     | Replaces the whole rootfs, the most common type.                                                                   |
+| Kobo.tgz   | Similar to the old KoboRoot.tgz, applied the same way. Updates /usr/local/Kobo. Never seen in the wild afaik.      |
+ 
 ### Shine 5
 
-   | Version    | Release Date   | Type                                                                                                                                                                                                                             |
+| Version    | Release Date   | Type                                                                                                                                                                                                                             |
 |------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 5.0.175773 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt6-recovery-5.0.175773/update.tar) |
 | 5.0.178115 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt5-qt6-update-5.0.178115/KoboRoot.tgz), [Normal](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-update-5.0.178115/update.tar), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-recovery-5.0.178115/update.tar)               |
