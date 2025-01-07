@@ -103,6 +103,37 @@
     `^SN-[TN][0-9]{4}[1-9A-C][0-9]{7},[0-9a-f]{32}$`
   - after verifying that the serial number is acceptable its dded into `/dev/disk/by-partlabel/hwcfg`
 
+# Known FW versions
+
+| Name       | Function                                                                                                           |
+|------------|--------------------------------------------------------------------------------------------------------------------|
+| Conversion | An update allowing conversion from the 4.x to the 5.x branch of the fw, uses old update format (KoboRoot.tgz)      | 
+| Recovery   | Replaces the whole recoveryfs, also contains a rootfs image inside /recovery folder that is applied during stage2. |
+| Normal     | Replaces the whole rootfs, the most common type.                                                                   |
+| Kobo.tgz   | Similar to the old KoboRoot.tgz, applied the same way. Updates /usr/local/Kobo. Never seen in the wild afaik.      |
+ 
+### Shine 5
+
+| Version    | Release Date   | Type                                                                                                                                                                                                                             |
+|------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 5.0.175773 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt6-recovery-5.0.175773/update.tar) |
+| 5.0.178115 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt5-qt6-update-5.0.178115/KoboRoot.tgz), [Normal](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-update-5.0.178115/update.tar), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-recovery-5.0.178115/update.tar)               |
+| 5.1.184318 | July 2024      | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Jul2024/tolino-qt6-update-5.1.184318/update.tar)                                                                                                                         |
+| 5.2.190625 | August 2024    | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Aug2024/tolino-qt6-update-5.2.190625/update.tar)                                                                                                                         |
+| 5.3.195056 | September 2024 | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Sep2024/tolino-qt6-update-5.3.195056/update.tar)                                                                                                                         |
+| 5.4.197982 | October 2024   | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Oct2024/tolino-qt6-update-5.4.197982/update.tar)                                                                                                                         |
+
+### Vision Colour
+
+| Version    | Release Date   | Type                                                                                                                                                                                                                             |
+|------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 5.1.184318 | July 2024      | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt5-qt6-update-5.1.184318/KoboRoot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt6-recovery-5.1.184318/update.tar) |
+| 5.1.186250 | July 2024      | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt6-update-5.1.186250/update.tar)                                                                                                                         |
+| 5.2.190625 | August 2024    | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Aug2024/tolino-qt6-update-5.2.190625/update.tar)                                                                                                                         |
+| 5.3.195056 | September 2024 | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Sep2024/tolino-qt6-update-5.3.195056/update.tar)                                                                                                                         |
+| 5.4.197982 | October 2024   | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Oct2024/tolino-qt6-update-5.4.197982/update.tar)                                                                                                                         |
+
+
 # Recovery Options
 
 - Fix your fuckups
@@ -169,35 +200,6 @@
   - Includes stripped down fastboot
   - My BinaryNinja db with some names and structs is present in `Preloader.bndb`
 
-# Known FW versions
-
-| Name       | Function                                                                                                           |
-|------------|--------------------------------------------------------------------------------------------------------------------|
-| Conversion | An update allowing conversion from the 4.x to the 5.x branch of the fw, uses old update format (KoboRoot.tgz)      | 
-| Recovery   | Replaces the whole recoveryfs, also contains a rootfs image inside /recovery folder that is applied during stage2. |
-| Normal     | Replaces the whole rootfs, the most common type.                                                                   |
-| Kobo.tgz   | Similar to the old KoboRoot.tgz, applied the same way. Updates /usr/local/Kobo. Never seen in the wild afaik.      |
- 
-### Shine 5
-
-| Version    | Release Date   | Type                                                                                                                                                                                                                             |
-|------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 5.0.175773 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt5-qt6-update-5.0.175773/KoboRoot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo12/May2024/tolino-qt6-recovery-5.0.175773/update.tar) |
-| 5.0.178115 | May 2024       | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt5-qt6-update-5.0.178115/KoboRoot.tgz), [Normal](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-update-5.0.178115/update.tar), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo/May2024/tolino-qt6-recovery-5.0.178115/update.tar)               |
-| 5.1.184318 | July 2024      | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Jul2024/tolino-qt6-update-5.1.184318/update.tar)                                                                                                                         |
-| 5.2.190625 | August 2024    | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Aug2024/tolino-qt6-update-5.2.190625/update.tar)                                                                                                                         |
-| 5.3.195056 | September 2024 | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Sep2024/tolino-qt6-update-5.3.195056/update.tar)                                                                                                                         |
-| 5.4.197982 | October 2024   | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Oct2024/tolino-qt6-update-5.4.197982/update.tar)                                                                                                                         |
-
-### Vision Colour
-
-| Version    | Release Date   | Type                                                                                                                                                                                                                             |
-|------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 5.1.184318 | July 2024      | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt5-qt6-update-5.1.184318/KoboRoot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt6-recovery-5.1.184318/update.tar) |
-| 5.1.186250 | July 2024      | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2024/tolino-qt6-update-5.1.186250/update.tar)                                                                                                                         |
-| 5.2.190625 | August 2024    | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Aug2024/tolino-qt6-update-5.2.190625/update.tar)                                                                                                                         |
-| 5.3.195056 | September 2024 | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Sep2024/tolino-qt6-update-5.3.195056/update.tar)                                                                                                                         |
-| 5.4.197982 | October 2024   | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Oct2024/tolino-qt6-update-5.4.197982/update.tar)                                                                                                                         |
 
 # Other links
 
