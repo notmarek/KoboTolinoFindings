@@ -15,8 +15,8 @@
 
 # Enabling devmode on 5.x firmware
 
-- Drop the [Kobo.tgz](https://github.com/notmarek/KoboTolinoFindings/raw/refs/heads/master/Kobo.tgz) file into `/mnt/onboard/.kobo`
-- After the update applies search `devmodeon` - devmode should be enabled :)
+- Drop the [update.tar](https://github.com/notmarek/KoboTolinoFindings/raw/refs/heads/master/EnableDevmode/update.tar) file into `/mnt/onboard/.kobo`
+- After the update fails/applies search `devmodeon` - devmode should be enabled :)
 
 # Downgrading from 5.x back to stock 4.x
 
