@@ -14,10 +14,19 @@ def walk(dev_code, version="0.0", prev_version=None, raw=None):
     next_version = re.search(r"-(\d\..*\d)", data["UpgradeURL"]).group(1)
     return walk(dev_code, next_version, version, data)
 
-
-
-
 MARKDOWN_TEMPLATE = "| {VERSION} | {MONTH} {YEAR}  | [Normal]({URL})                                                                                                                         |"
+MARKDOWN_REGEX = r"5\.\d*\.\d{6}"
+
+def get_latest_known(file="README.md"):
+    with open(file, "r") as f:
+        txt = f.read()
+        found = re.findall(MARKDOWN_REGEX, txt, re.MULTILINE | re.DOTALL)
+        return found[-1]
+
+last_version = get_latest_known()
+
+
+
 
 
 DEVICES = [
@@ -48,12 +57,16 @@ month_dict = {
     "Nov": "November",
     "Dec": "December"
 }
+
+
 for dev in DEVICES:
     (version, url) = walk(dev["code"])
     url = url.replace(".zip", "/update.tar")
     date = re.search(r"\/(.{3})(\d{4})\/", url)
     month = month_dict[date.group(1)]
     year = date.group(2)
+    if (version != last_version):
+        print("NEW!")
     md = MARKDOWN_TEMPLATE.replace("{VERSION}", version).replace("{MONTH}", month).replace("{YEAR}", year).replace("{URL}", url)
 
     print(dev["name"], version)
