@@ -125,6 +125,7 @@
 | 5.6.209315 | February 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Feb2025/tolino-qt6-update-5.6.209315/update.tar)                                                                                                                         |
 | 5.7.212781 | March 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Mar2025/tolino-qt6-update-5.7.212781/update.tar)                                                                                                                         |
 | 5.8.216841 | May 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/May2025/tolino-qt6-update-5.8.216841/update.tar)                                                                                                                         |
+| 5.9.220067 | June 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Jun2025/tolino-qt6-update-5.9.220067/update.tar)                                                                                                                         |
 
 ### Vision Colour
 
@@ -138,6 +139,7 @@
 | 5.6.209315 | February 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Feb2025/tolino-qt6-update-5.6.209315/update.tar)                                                                                                                         |
 | 5.7.212781 | March 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Mar2025/tolino-qt6-update-5.7.212781/update.tar)                                                                                                                         |
 | 5.8.216841 | May 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/May2025/tolino-qt6-update-5.8.216841/update.tar)                                                                                                                         |
+| 5.9.220067 | June 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Jun2025/tolino-qt6-update-5.9.220067/update.tar)                                                                                                                         |
 
 # Recovery Options
 
