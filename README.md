@@ -155,7 +155,7 @@
   ### Fastboot
 
   - Can be access by holding power and spamming right button with a cable connected to the computer
-  - Very stripped down, not sure how useful, `flash` cmd might work
+  - Very stripped down, not sure how useful, `flash` command ~~might~~ works -- I've managed to flash the serial number and some other things.
 
 # Boot
 
