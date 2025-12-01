@@ -1,3 +1,4 @@
+from asyncio import get_event_loop
 import requests
 import re
 
@@ -38,10 +39,10 @@ DEVICES = [
         "name": "Tolino Shine BW",
         "code": 691,
     },
-    {
-        "name": "Tolino Shine Color",
-        "code": 693
-    }
+    # {
+    #     "name": "Tolino Shine Color",
+    #     "code": 693
+    # }
 ]
 month_dict = {
     "Jan": "January",
@@ -59,18 +60,37 @@ month_dict = {
 }
 
 
-for dev in DEVICES:
-    (version, url) = walk(dev["code"])
-    url = url.replace(".zip", "/update.tar")
-    date = re.search(r"\/(.{3})(\d{4})\/", url)
-    month = month_dict[date.group(1)]
-    year = date.group(2)
-    if (version != last_version):
-        print("NEW!")
-    md = MARKDOWN_TEMPLATE.replace("{VERSION}", version).replace("{MONTH}", month).replace("{YEAR}", year).replace("{URL}", url)
+def get_version_md() -> dict:
+    out = {}
+    for dev in DEVICES:
+        (version, url) = walk(dev["code"])
+        url = url.replace(".zip", "/update.tar")
+        date = re.search(r"\/(.{3})(\d{4})\/", url)
+        month = month_dict[date.group(1)]
+        year = date.group(2)
+        # if (version != last_version):
+            # print("NEW!")
+        md = MARKDOWN_TEMPLATE.replace("{VERSION}", version).replace("{MONTH}", month).replace("{YEAR}", year).replace("{URL}", url)
+        out[dev["code"]] = {
+            "new": version != last_version,
+            "md": md,
+            "version": version
+        }
+        # print(dev["name"], version)
+        # print(md)
+    return out
 
-    print(dev["name"], version)
-    print(md)
+data = get_version_md()
+readme = ""
+with open("README.md", "r") as f:
+    readme = f.read()
+    for x in data:
+        if (data[x]["new"]):
+            print(f"yooo we got a new thing for {x}")
+            readme = readme.replace(f"<!-- {x} -->", data[x]["md"] + f"\n<!-- {x} -->")
+with open("README.md", "w") as f:
+    f.write(readme)
+
 
 # # updates for vision are almost identical to shine but have foxit
 # print(, walk(URL, "0.0"))
