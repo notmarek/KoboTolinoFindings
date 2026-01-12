@@ -129,6 +129,7 @@
 | 5.10.225420 | July 2025  | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo12/Jul2025/qt5-qt6-5.10.225420/Koboroot.tgz), [Recovery](https://ereaderfiles.kobo.com/firmwares/kobo12/Jul2025/qt6-recovery-5.10.225420/update.tar)                                                                                                                         | As of this version kobo has started testing the 5.x firmware on EU kobo devices, more info [here](https://www.mobileread.com/forums/showthread.php?t=361035&page=20) and [here](https://help.kobo.com/hc/en-us/articles/32246787707799-Kobo-eReader-Accessibility-Features-Software-Support), this also seems to contain a recovery update, probably to faciliate the downgrade option in accessibility settings. |
 | 5.12.232736 | October 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Oct2025/tolino-qt6-update-5.12.232736/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/175) |
 | 5.13.239318 | December 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Dec2025/qt6-update-5.13.239318/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/179) |
+| 5.10.226356 | August 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Aug2025/qt5-qt6-5.10.226356/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/30) |
 <!-- 691 -->
 
 ### Vision Colour / Libra Colour
@@ -147,6 +148,7 @@
 | 5.10.225420 | July 2025  | [Conversion](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2025/qt5-qt6-5.10.225420/KoboRoot.tgz),[Recovery](https://ereaderfiles.kobo.com/firmwares/kobo11/Jul2025/qt6-recovery-5.10.225420/update.tar)                                                                                                                         | As of this version kobo has started testing the 5.x firmware on EU kobo devices, more info [here](https://www.mobileread.com/forums/showthread.php?t=361035&page=20) and [here](https://help.kobo.com/hc/en-us/articles/32246787707799-Kobo-eReader-Accessibility-Features-Software-Support), this also seems to contain a recovery update, probably to faciliate the downgrade option in accessibility settings. |
 | 5.12.232736 | October 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Oct2025/tolino-qt6-update-5.12.232736/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/175) |
 | 5.13.239318 | December 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Dec2025/qt6-update-5.13.239318/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/178) |
+| 5.10.226356 | August 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Aug2025/qt5-qt6-5.10.226356/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/30) |
 <!-- 690 -->
 
 # Recovery Options
