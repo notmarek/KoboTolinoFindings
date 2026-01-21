@@ -131,6 +131,7 @@
 | 5.13.239318 | December 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Dec2025/qt6-update-5.13.239318/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/179) |
 | 5.10.226356 | August 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Aug2025/qt5-qt6-5.10.226356/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/30) |
 | 5.13.240671 | January 2026  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Jan2026/qt6-update-5.13.240671/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/179) |
+| 5.13.241423 | January 2026  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo12/Jan2026/qt6-update-5.13.241423/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/179) |
 <!-- 691 -->
 
 ### Vision Colour / Libra Colour
@@ -151,6 +152,7 @@
 | 5.13.239318 | December 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Dec2025/qt6-update-5.13.239318/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/178) |
 | 5.10.226356 | August 2025  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Aug2025/qt5-qt6-5.10.226356/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/30) |
 | 5.13.240671 | January 2026  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Jan2026/qt6-update-5.13.240671/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/178) |
+| 5.13.241423 | January 2026  | [Normal](https://ereaderfiles.kobo.com/firmwares/kobo11/Jan2026/qt6-update-5.13.241423/update.tar) | [Release notes](https://api.kobobooks.com/1.0/ReleaseNotes/178) |
 <!-- 690 -->
 
 # Recovery Options
